@@ -1,0 +1,22 @@
+public class Vehiculo{
+    //atributos o variables de instancia
+    int numeroRuedas;
+    String color;
+    int velMax;
+   
+    public Vehiculo(){
+        //constructor
+        this.numeroRuedas=0;
+        this.color="";
+        this.velMax = 0;
+    }
+    public Vehiculo(int num, String col, int vel){
+        //constructor sobrecargado
+        this.numeroRuedas=num;
+        this.color=col;
+        this.velMax=vel;
+    }
+    public static void imprimeVelocidad(Vehiculo v){
+        System.out.println(v.velMax);
+    }
+   }
