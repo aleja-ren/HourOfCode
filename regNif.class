@@ -1,0 +1,35 @@
+public class regNIF{
+    long num;
+    int dig;
+    char letra;
+   
+    //constructor
+    public regNIF(){
+     this.num=0;
+     this.dig=0;
+     this.letra='';
+    }
+    
+    public regNIF(long n, int d, char l){
+     this.num=n;
+     this.dig=d;
+     this.letra=l;
+    }
+
+    public static RegNIF dni (String cadena){
+        int dig, indice = 0;
+        long num=0;
+        long potencia=1;
+       
+        while(cadena.CharAt(indice) == 0){
+            indice++;
+            dig = 8-indice;
+            for (int i=7; i>=indice; i--){
+                num = num + (cadena.CharAt(i)-'0')*potencia;
+                potencia = potencia * 10;
+            }
+        }
+        RegNIF dni = new RegNIF (num, dig, cadena.CharAt(8));
+        return dni;
+    }
+}
